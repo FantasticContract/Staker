@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.19;
 
 import "hardhat/console.sol";
 import "./ExampleExternalContract.sol";
@@ -36,7 +36,7 @@ contract Staker {
     _;
   }
 
-  /* 1687094472
+  /*
   Checks if the claim period has ended or not
   */
   modifier claimDeadlineReached( bool requireReached ) {
