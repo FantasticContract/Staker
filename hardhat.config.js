@@ -10,6 +10,7 @@ module.exports = {
   etherscan: {
     apiKey: ETHERSCAN_API_KEY
   },
+  defaultNetwork: "sepolia",
   networks: {
     goerli: {
       url: `https://eth-goerli.g.alchemy.com/v2/${ALCHEMY_GOERLI_API_KEY}`,

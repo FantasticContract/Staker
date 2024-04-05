@@ -5,6 +5,7 @@ coverage.json
 typechain
 typechain-types
 note
+config.js
 ignore
 ignore/*.*
 

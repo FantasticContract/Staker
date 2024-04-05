@@ -1,4 +1,5 @@
 const hre = require("hardhat");
+const fs = require('fs');
 
 async function main() {
     const ExampleExternalContract = await hre.ethers.getContractFactory("ExampleExternalContract");
@@ -10,6 +11,14 @@ async function main() {
     const staker = await Staker.deploy(exampleExternalContract.address);
     await staker.deployed();
     console.log("Staker deployed to:", staker.address);
+
+    /* this code writes the contract addresses to a local */
+    /* file named config.js that we can use in the app */
+    fs.writeFileSync('./config.js', `
+    export const exampleExternalContract = "${exampleExternalContract.address}"
+    export const staker = "${staker.address}"
+    export const ownerAddress = "${staker.signer.address}"
+    `);
 
 }
 
